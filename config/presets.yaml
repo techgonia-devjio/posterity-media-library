@@ -1,0 +1,47 @@
+# Visifan Media Library — Image Presets
+#
+# Each preset is a named sequence of operations applied in order.
+# Operations map 1:1 to UrlGenerator fluent methods.
+#
+# Supported operations:
+#   resize   — scale down to fit within bounds (preserves aspect ratio)
+#   cover    — scale + crop to fill exact dimensions (focus-point aware)
+#   blur     — gaussian blur
+#   greyscale
+#   flip     — vertical (top ↔ bottom)
+#   flop     — horizontal (left ↔ right)
+#   format   — output encoding (type: jpg|webp|avif|png, quality: 0–100)
+#   watermark — overlay image (position, opacity)
+
+presets:
+
+  # 150×150 square thumbnail — ideal for listing pages / avatars
+  thumb:
+    operations:
+      - cover:  { w: 150, h: 150 }
+      - format: { type: webp, quality: 80 }
+
+  # Full-width hero banner
+  hero:
+    operations:
+      - resize: { w: 1920 }
+      - format: { type: webp, quality: 90 }
+
+  # Mobile-optimised variant — smaller + AVIF
+  mobile:
+    operations:
+      - resize: { w: 640 }
+      - format: { type: avif, quality: 70 }
+
+  # Greyscale preview card
+  preview:
+    operations:
+      - resize:     { w: 300 }
+      - greyscale:  ~
+      - format:     { type: jpg, quality: 60 }
+
+  # OG / social share image
+  og:
+    operations:
+      - cover:  { w: 1200, h: 630 }
+      - format: { type: jpg, quality: 85 }

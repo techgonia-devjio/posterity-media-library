@@ -1,0 +1,46 @@
+{
+    "name": "posterity/media-library",
+    "description": "Laravel media library — images, video, documents, and audio with a pluggable effect pipeline. Storage, cache, and metadata layers are framework-agnostic; image processing requires Intervention Image v3.",
+    "license": "MIT",
+    "type": "library",
+    "require": {
+        "php": "^8.3",
+        "illuminate/support": "^11.0|^12.0|^13.0",
+        "illuminate/filesystem": "^11.0|^12.0|^13.0",
+        "illuminate/cache": "^11.0|^12.0|^13.0",
+        "intervention/image": "^3.0",
+        "symfony/yaml": "^7.4"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^9.0|^10.0",
+        "phpunit/phpunit": "^11.0|^12.0"
+    },
+    "suggest": {
+        "james-heinrich/getid3": "For video/audio metadata extraction (duration, codec, bitrate, ID3 tags)"
+    },
+    "autoload": {
+        "psr-4": {
+            "Posterity\\MediaLibrary\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Posterity\\MediaLibrary\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Posterity\\MediaLibrary\\Laravel\\MediaServiceProvider"
+            ],
+            "aliases": {
+                "Media": "Posterity\\MediaLibrary\\Laravel\\Facades\\Media"
+            }
+        }
+    },
+    "scripts": {
+        "test": "phpunit"
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
