@@ -1,6 +1,6 @@
 # Posterity Media Library
 
-A professional, standalone Media Library for Laravel that prioritizes portability, performance, and developer experience. Designed to work with or without a database using a **Self-Contained Asset** pattern.
+A standalone Media Library that prioritizes portability, performance, and developer experience. Designed to work with or without a database using a **Self-Contained Asset** pattern.
 
 ## 🚀 Key Features
 
