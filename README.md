@@ -2,7 +2,7 @@
 
 A standalone Media Library that prioritizes portability, performance, and developer experience. Designed to work with or without a database using a **Self-Contained Asset** pattern.
 
-## 🚀 Key Features
+## Features List
 
 - **Decoupled Engine:** Works independently of any UI or CMS.
 - **Self-Contained Metadata:** Stores technical data, alt text, and UUIDs in `.json` sidecar files within a `.meta/` folder next to your media.
@@ -14,7 +14,7 @@ A standalone Media Library that prioritizes portability, performance, and develo
 - **Flexible Caching:** Multi-disk support (S3, R2, Local) for processed thumbnails.
 - **Speed Layer:** Uses Laravel's Cache system for lightning-fast UUID-to-Path lookups.
 
-## 📁 The Sidecar Architecture
+## The Sidecar Architecture
 
 Everything stays together. Move a folder physically, and its metadata moves with it.
 
@@ -31,7 +31,7 @@ uploads/
         └── cache/              <-- Extracted video frames
 ```
 
-## 📖 Usage
+## Usage
 
 ### Image Processing
 ```php
@@ -67,8 +67,8 @@ Posterity automatically extracts technical data upon upload:
 - **Images:** EXIF, IPTC, GPS, Dimensions, Mime.
 - **Videos:** Duration, Resolution, Bitrate (via FFmpeg).
 
-## 🏗 Modular CMS Vision
+## Modular CMS Vision
 This is the foundational media module for the Posterity CMS. It is designed to be consumed by **Page Blocks** and **Filament Resources** while remaining completely decoupled from them.
 
-## 📄 License
+## License
 The MIT License (MIT).
